@@ -17,13 +17,13 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     # We cannot use flit-core >=3.2.0,<4
     # b/c we need to avoid a cyclic dependency on tomli-w
     - flit-core 3.3.0
     - pip
   run:
-    - python >=3.6
+    - python >=3.7
 
 test:
   imports:
