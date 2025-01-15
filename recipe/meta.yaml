@@ -1,5 +1,6 @@
 {% set name = "tomli-w" %}
 {% set version = "1.2.0" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
@@ -19,7 +20,7 @@ requirements:
     - python {{ python_min }}
     # We cannot use flit-core >=3.2.0,<4
     # b/c we need to avoid a cyclic dependency on tomli-w
-    - flit-core 3.3.0
+    - flit-core 3.10.1
     - pip
   run:
     - python >={{ python_min }}
