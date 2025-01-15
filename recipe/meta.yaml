@@ -1,5 +1,6 @@
 {% set name = "tomli-w" %}
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,19 +8,19 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tomli_w-{{ version }}.tar.gz
-  sha256: 49e847a3a304d516a169a601184932ef0f6b61623fe680f836a2aa7128ed0d33
+  sha256: 2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
     # We cannot use flit-core >=3.2.0,<4
     # b/c we need to avoid a cyclic dependency on tomli-w
-    - flit-core 3.3.0
+    - flit-core 3.10.1
     - pip
   run:
     - python >={{ python_min }}
